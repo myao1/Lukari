@@ -4,6 +4,7 @@
     <string name="app_name">Lukari Remote</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="addProf">Add Profile</string>
     <string name="addRoom">Add Room</string>
     <string name="roomSel">Room Selection</string>
     <string name="title_activity_room">Room</string>

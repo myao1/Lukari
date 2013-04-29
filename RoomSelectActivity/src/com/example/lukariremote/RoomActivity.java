@@ -4,8 +4,12 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.support.v4.app.NavUtils;
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.os.Build;
 
 public class RoomActivity extends Activity {
@@ -14,6 +18,11 @@ public class RoomActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_room);
+		Intent intent = getIntent();
+		String roomName = intent.getStringExtra("roomName");
+		String[] roomArray = intent.getStringArrayExtra("rooms");
+		Spinner roomDropDown = (Spinner) findViewById(R.id.spinner1);
+		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getApplicationContext(), R.array.roomsArray, android.R.layout.simple_spinner_item);
 		// Show the Up button in the action bar.
 		setupActionBar();
 	}
@@ -50,6 +59,11 @@ public class RoomActivity extends Activity {
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+	
+	public void addProfile(View view){
+		
+		
 	}
 
 }

@@ -9,42 +9,45 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".RoomActivity" >
     
-    <TextView
-        android:id="@+id/roomName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:text="Room Name"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
     
-    <ExpandableListView
-        android:id="@+id/expandableListView1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/roomName"
-        android:layout_toRightOf="@+id/roomName" />
-
+    <RelativeLayout
+        android:id="@+id/roomSelectDropDown"
+        android:layout_width="wrap_content"
+        android:layout_height="65dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" >
+    
+    	<Spinner
+    	    android:id="@+id/spinner1"
+    	    android:layout_width="wrap_content"
+    	    android:layout_height="wrap_content"
+    	    android:layout_alignParentLeft="true"
+    	    android:layout_alignParentTop="true" />
+    
+    </RelativeLayout>
+    
     <ListView
         android:id="@+id/profileList"
         android:layout_width="match_parent"
-        android:layout_below="@id/roomName"
-        android:layout_height="174dp" >
+        android:layout_height="160dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/roomSelectDropDown" >
     </ListView>
 
     <Button
-        android:id="@+id/btnAddRoom"
+        android:id="@+id/btnAddProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/profileList"
         android:layout_centerHorizontal="true"
+        android:onClick="addProfile"
         android:text="@string/addProf" />
 
     <RelativeLayout
         android:id="@+id/relativeLayout1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btnAddRoom"
+        android:layout_below="@+id/btnAddProfile"
         android:layout_marginTop="10dp"
         android:gravity="fill_vertical" >
 
@@ -90,10 +93,6 @@
         	android:layout_height="wrap_content"
         	android:layout_alignParentLeft="true"
         	android:layout_below="@id/brightness" />
-
-        
-
     </RelativeLayout>
-
 
 </RelativeLayout>

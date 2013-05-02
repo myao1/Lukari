@@ -28,11 +28,21 @@ public class RoomActivity extends Activity {
 		ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(this, R.layout.spinner_item, roomArray);
 		spinnerAdapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
 		roomDropDown.setAdapter(spinnerAdapter);
+		roomDropDown.setSelection(spinnerAdapter.getPosition(roomName));
 		
 		ListView profileList = (ListView) findViewById(R.id.profileList);
 		String[] profArray = new String[]{"Sleep", "Reading", "Desk"};
 		ArrayAdapter<String> profileAdapter = new ArrayAdapter<String>(this, R.layout.profile_item, profArray);
 		profileList.setAdapter(profileAdapter);
+		
+		profileList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+			public void onItemClick(AdapterView<?> parent, View view, int pos, long id){
+				String item = (String) parent.getItemAtPosition(pos);
+				Intent profIntent = new Intent(RoomActivity.this, LightSelectionActivity.class);
+				profIntent.putExtra("profName", item);
+				RoomActivity.this.startActivity(profIntent);
+			}
+		});
 		// Show the Up button in the action bar.
 		setupActionBar();
 	}

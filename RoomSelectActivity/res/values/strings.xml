@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Lukari Remote</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="addRoom">Add Room</string>
+    <string name="addProf">Add Profile</string>
+    <string name="roomSel">Room Selection</string>
+    <string name="title_activity_room">Room</string>
+    <string name="title_activity_light_selection">LightSelectionActivity</string>
+    <string-array name="roomsArray">
+        <item>Master Bed Room</item>
+        <item>Kitchen</item>
+        <item>Bathroom</item>
+        <item>Living Room</item>
+    </string-array>
+
+</resources>
